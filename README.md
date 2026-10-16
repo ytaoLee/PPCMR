@@ -2,7 +2,6 @@
 
 Research code for privacy-preserving cross-modal retrieval with access control and client verification. The current method uses frozen 512-dimensional CLIP FP32 embeddings, exact secret-shared inner products, authenticated scope permissions, and private compact verification.
 
-This is a **code-only release**. Datasets, image/text annotations, extracted embeddings, model checkpoints, experiment figures, recorded results, manuscript files, and private protocol state are not included. Scripts create their own outputs locally under `artifacts/`, which Git ignores.
 
 ## Quick start
 
