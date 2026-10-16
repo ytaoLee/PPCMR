@@ -94,4 +94,4 @@ Additional drivers cover full/compact verification, cached/local comparisons and
 
 ## 中文说明
 
-仓库仅包含本方案代码、测试、依赖与运行说明，不包含 COCO/Flickr30k 原始数据、图文标注、模型权重、特征缓存、实验图、实测结果、论文文件或私有密钥/秘密分享状态。先运行 `python -m unittest discover -s tests -v` 和 `python run_float_demo.py`，随后再按上述步骤配置本地数据。正式方法使用 CLIP 浮点特征；早期二值原型仅为历史测试保留。
+仓库仅包含本方案代码、测试、依赖与运行说明。先运行 `python -m unittest discover -s tests -v` 和 `python run_float_demo.py`，随后再按上述步骤配置本地数据。正式方法使用 CLIP 浮点特征；早期二值原型仅为历史测试保留。
