@@ -103,19 +103,3 @@ can overlap and must not be added again to the total. Summaries use medians,
 minima/maxima and paired speedups for these five queries; they do not establish
 p95 or performance across independent physical clouds. Cached local search is
 not measured in this TCP cohort.
-
-## Local plot CSV schemas
-
-`plot_accuracy.py` reads `accuracy_ci.csv`: `dataset` (COCO/Flickr30k),
-`direction` (image-to-text/text-to-image), `arithmetic` (Exact/FP32), `k`,
-`recall_percent`, `ci_low_percent`, `ci_high_percent`. Supply all k=1,5,10 rows.
-The plotted intervals are pointwise image-cluster bootstrap intervals, not
-binomial intervals inferred from timings.
-
-`plot_scale_costs.py` reads the original IPC cohort, not this TCP cohort:
-`scale_observations.csv` (72 rows: `images`, `method`, `direction`,
-`complete_query_seconds`), `scale_summary.csv` (24 rows: the same group keys and
-`median_peer_dealer_MB`), and `scale_setup.csv` (12 rows: `images`, `method`,
-`two_modality_setup_seconds`). Methods are `fresh_mpc`, `cached_mpc`,
-`cached_local_limb`; directions are `image`/`text`; image sizes are
-1000/5000/10000/20000. All three observations per timing group are retained.

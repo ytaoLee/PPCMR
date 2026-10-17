@@ -92,20 +92,11 @@ These two runners use Windows working-set counters (`ppcmr/windows_memory.py`). 
 
 Additional drivers cover full/compact verification, cached/local comparisons and publication/query privacy audits. Existing reports are not bundled. The release removes local machine paths and reconstructs manifests from user-supplied annotations; the cryptographic protocol modules and their tests retain the measured implementation.
 
-## Controlled TCP experiment and current plots
+## Controlled TCP experiment
 
 [`experiments/network/README.md`](experiments/network/README.md) documents the bounded 5k/20k-image I2T comparison: five paired queries, one excluded warm-up per method/profile, four calibrated network profiles, fresh and cached MPC, and independent exact-score/order/content checks. Linux network namespaces and receiver-side router egress shaping carry the original streamed protocol over TCP. DU/dealer share one node; the clouds occupy separate processes and namespaces on the same host. This is controlled network emulation, not a cross-cloud VM deployment.
 
 The public runner adapts local paths and records a new pre-run design/source manifest. The numerical protocol modules remain unchanged. The original measurement environment used Linux/WSL2, Python 3.14.8, NumPy 2.4.6, cryptography 47.0.0, OpenBLAS 0.3.30, and four BLAS threads. New runs record their actual versions and generated input hashes; regenerated inputs or other runtimes can change timings.
-
-`plots/plot_accuracy.py` and `plots/plot_scale_costs.py` regenerate the current figure layouts from locally supplied measurement CSVs. Install `requirements-plots.txt` separately. The accuracy plot shows Exact curves; visually overlapping FP32 curves are omitted explicitly, with ranking/recall differences reported by the arithmetic audit. Both plots use four visible spines, grids on both axes, and inward ticks on all sides. Source CSVs and rendered figures are not bundled.
-
-```sh
-python -m pip install -r requirements-plots.txt
-python plots/plot_accuracy.py --data-dir /path/to/local/csvs --output-dir artifacts/plots
-python plots/plot_scale_costs.py --data-dir /path/to/local/csvs --output-dir artifacts/plots
-python plots/summarize_arithmetic.py --coco-audit artifacts/accuracy_coco/arithmetic_audit.json --flickr-audit artifacts/accuracy_flickr30k/arithmetic_audit.json --output artifacts/plots/arithmetic_differences.csv
-```
 
 ## 中文说明
 

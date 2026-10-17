@@ -58,3 +58,7 @@ secrets*.json
 *.gz
 *.7z
 *.log
+
+# Local manuscript visualization tooling
+/plots/
+/requirements-plots.txt
